@@ -1,0 +1,8 @@
+#NuGet Packages
+packages/*
+*.nupkg
+
+#Visual Studio
+.vs/*
+*/bin/*
+*/obj/*
