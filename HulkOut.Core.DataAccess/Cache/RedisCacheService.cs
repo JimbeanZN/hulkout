@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HulkOut.Core.DataAccess
+namespace HulkOut.Core.DataAccess.Cache
 {
 	public class RedisCacheService : ICacheService
 	{
@@ -15,16 +15,6 @@ namespace HulkOut.Core.DataAccess
 		}
 
 		public bool Exists(string key)
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool FlushAll()
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool FlushCurrent()
 		{
 			throw new NotImplementedException();
 		}

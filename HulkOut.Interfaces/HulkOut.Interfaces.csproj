@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBaseModel.cs" />
+    <Compile Include="DataAccess\IAuditSerivce.cs" />
+    <Compile Include="DataAccess\IDataService.cs" />
     <Compile Include="DataAccess\ICacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HulkOut.Models\HulkOut.Models.csproj">
+      <Project>{5a2edc31-49ce-4a71-be6c-f3013a26fdb6}</Project>
+      <Name>HulkOut.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

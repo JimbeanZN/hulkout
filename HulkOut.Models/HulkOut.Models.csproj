@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,13 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Timer.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Enums\AuditEnums.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Data\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HulkOut.Interfaces\HulkOut.Interfaces.csproj">
-      <Project>{3251bc74-40af-4b64-ac4c-6607b46faafa}</Project>
-      <Name>HulkOut.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
