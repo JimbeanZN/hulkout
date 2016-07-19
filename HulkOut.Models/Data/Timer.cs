@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HulkOut.Models.Data
@@ -15,6 +16,7 @@ namespace HulkOut.Models.Data
 		/// <value>
 		/// The title.
 		/// </value>
+		[Required]
 		public string Title { get; set; }
 
 		/// <summary>
@@ -32,6 +34,7 @@ namespace HulkOut.Models.Data
 		/// The owner user identifier.
 		/// </value>
 		[ForeignKey("OwnerUserEntity")]
+		[Required]
 		public Guid OwnerUserId { get; set; }
 
 		/// <summary>
@@ -49,6 +52,7 @@ namespace HulkOut.Models.Data
 		/// The category identifier.
 		/// </value>
 		[ForeignKey("Category")]
+		[Required]
 		public Guid CategoryId { get; set; }
 
 		/// <summary>
@@ -65,6 +69,7 @@ namespace HulkOut.Models.Data
 		/// <value>
 		/// <c>true</c> if this instance can cooldown automatically; otherwise, <c>false</c>.
 		/// </value>
+		[Required]
 		public bool CanCooldownAutomatically { get; set; }
 
 		/// <summary>

@@ -19,7 +19,7 @@ namespace HulkOut.Models
 		/// The identifier.
 		/// </value>
 		[Key]
-		Guid Id { get; set; }
+		public Guid Id { get; set; }
 
 		/// <summary>
 		/// Gets or sets the created date.
@@ -27,7 +27,8 @@ namespace HulkOut.Models
 		/// <value>
 		/// The created date.
 		/// </value>
-		DateTime CreatedDate { get; set; }
+		[Required]
+		public DateTime CreatedDate { get; set; }
 
 		/// <summary>
 		/// Gets or sets the created by user identifier.
@@ -35,7 +36,8 @@ namespace HulkOut.Models
 		/// <value>
 		/// The created by user identifier.
 		/// </value>
-		Guid CreatedByUserId { get; set; }
+		[Required]
+		public Guid CreatedByUserId { get; set; }
 
 		/// <summary>
 		/// Gets or sets the last updated date.
@@ -43,7 +45,8 @@ namespace HulkOut.Models
 		/// <value>
 		/// The last updated date.
 		/// </value>
-		DateTime LastUpdatedDate { get; set; }
+		[Required]
+		public DateTime LastUpdatedDate { get; set; }
 
 		/// <summary>
 		/// Gets or sets the last updated by user identifier.
@@ -51,7 +54,8 @@ namespace HulkOut.Models
 		/// <value>
 		/// The last updated by user identifier.
 		/// </value>
-		Guid LastUpdatedByUserId { get; set; }
+		[Required]
+		public Guid LastUpdatedByUserId { get; set; }
 
 		/// <summary>
 		/// Gets or sets a value indicating whether this instance is deleted.
@@ -59,6 +63,7 @@ namespace HulkOut.Models
 		/// <value>
 		/// <c>true</c> if this instance is deleted; otherwise, <c>false</c>.
 		/// </value>
-		bool IsDeleted { get; set; }
+		[Required]
+		public bool IsDeleted { get; set; }
 	}
 }
