@@ -10,10 +10,11 @@ namespace HulkOut.Models.Enums
 	{
 		public enum AuditAction
 		{
-			Get = 0,
-			Insert = 1,
-			Update = 2,
-			Delete = 3
+			Get = 1,
+			Insert = 2,
+			Update = 3,
+			Delete = 4,
+			Log = 5
 		}
 	}
 }
