@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\IAuditSerivce.cs" />
+    <Compile Include="DataAccess\Auditing\IAuditRepository.cs" />
+    <Compile Include="DataAccess\Auditing\IAuditSerivce.cs" />
     <Compile Include="DataAccess\IDataService.cs" />
     <Compile Include="DataAccess\ICacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HulkOut.Interfaces", "HulkO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HulkOut.Logic", "HulkOut.Logic\HulkOut.Logic.csproj", "{A699E9A1-9C4B-4F3B-A1BB-18A472D37CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HulkOut.Data", "HulkOut.Data\HulkOut.Data.csproj", "{E5DC4212-3AEE-4915-8783-1A72B4FBF376}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HulkOut.Data.EF", "HulkOut.Data\HulkOut.Data.EF.csproj", "{E5DC4212-3AEE-4915-8783-1A72B4FBF376}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{7AAD05E4-5FC3-46C2-9F5F-52E3C54662B0}"
 EndProject

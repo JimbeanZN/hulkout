@@ -106,9 +106,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HulkOut.Data\HulkOut.Data.csproj">
+    <ProjectReference Include="..\HulkOut.Data\HulkOut.Data.EF.csproj">
       <Project>{e5dc4212-3aee-4915-8783-1a72b4fbf376}</Project>
-      <Name>HulkOut.Data</Name>
+      <Name>HulkOut.Data.EF</Name>
     </ProjectReference>
     <ProjectReference Include="..\HulkOut.Interfaces\HulkOut.Interfaces.csproj">
       <Project>{3251bc74-40af-4b64-ac4c-6607b46faafa}</Project>
