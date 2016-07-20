@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ namespace HulkOut.Models.Data
 	/// 
 	/// </summary>
 	/// <seealso cref="HulkOut.Models.BaseModel" />
-	public class Timer : BaseModel
+	public class Incident : BaseModel
 	{
 		/// <summary>
 		/// Gets or sets the title.
@@ -46,22 +47,22 @@ namespace HulkOut.Models.Data
 		public User OwnerUserEntity { get; set; }
 
 		/// <summary>
-		/// Gets or sets the category identifier.
+		/// Gets or sets the incident category identifier.
 		/// </summary>
 		/// <value>
-		/// The category identifier.
+		/// The incident category identifier.
 		/// </value>
-		[ForeignKey("Category")]
+		[ForeignKey("IncidentCategory")]
 		[Required]
-		public Guid CategoryId { get; set; }
+		public Guid IncidentCategoryId { get; set; }
 
 		/// <summary>
-		/// Gets or sets the category entity.
+		/// Gets or sets the incident category.
 		/// </summary>
 		/// <value>
-		/// The category entity.
+		/// The incident category.
 		/// </value>
-		public Category CategoryEntity { get; set; }
+		public IncidentCategory IncidentCategory { get; set; }
 
 		/// <summary>
 		/// Gets or sets a value indicating whether this instance can cooldown automatically.
@@ -79,5 +80,13 @@ namespace HulkOut.Models.Data
 		/// The automatic cooldown period.
 		/// </value>
 		public TimeSpan? AutomaticCooldownPeriod { get; set; }
+
+		/// <summary>
+		/// Gets or sets the logs.
+		/// </summary>
+		/// <value>
+		/// The logs.
+		/// </value>
+		public virtual IEnumerable<IncidentLog> Logs { get; set; }
 	}
 }

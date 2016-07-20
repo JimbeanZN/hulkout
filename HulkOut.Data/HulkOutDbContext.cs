@@ -16,8 +16,11 @@ namespace HulkOut.Data.EF
 		}
 
 		public DbSet<Audit> Audits { get; set; }
-		public DbSet<Category> Categories { get; set; }
-		public DbSet<Timer> Timers { get; set; }
+
+		public DbSet<Incident> Incidents { get; set; }
+		public DbSet<IncidentCategory> IncidentCategories { get; set; }
+		public DbSet<IncidentLog> IncidentLogs { get; set; }
+
 		public DbSet<User> Users { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)

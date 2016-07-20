@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Audit.cs" />
-    <Compile Include="Data\Timer.cs" />
+    <Compile Include="Data\Incident.cs" />
+    <Compile Include="Data\IncidentLog.cs" />
+    <Compile Include="Data\IncidentLogTracker.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Enums\AuditEnums.cs" />
     <Compile Include="BaseModel.cs" />
-    <Compile Include="Data\Category.cs" />
+    <Compile Include="Data\IncidentCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

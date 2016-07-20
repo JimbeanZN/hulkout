@@ -13,7 +13,6 @@ namespace HulkOut.Models.Data
 	/// 
 	/// </summary>
 	/// <seealso cref="HulkOut.Models.BaseModel" />
-	[Table("Log", Schema = "Audit")]
 	public class Audit : BaseModel
 	{
 		/// <summary>
