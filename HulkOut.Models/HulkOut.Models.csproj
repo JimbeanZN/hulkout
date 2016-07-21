@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Data\Audit.cs" />
     <Compile Include="Data\Incident.cs" />
-    <Compile Include="Data\IncidentLog.cs" />
+    <Compile Include="Data\IncidentTracker.cs" />
     <Compile Include="Data\IncidentLogTracker.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Enums\AuditEnums.cs" />

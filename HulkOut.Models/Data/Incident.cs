@@ -87,6 +87,6 @@ namespace HulkOut.Models.Data
 		/// <value>
 		/// The logs.
 		/// </value>
-		public virtual IEnumerable<IncidentLog> Logs { get; set; }
+		public virtual IEnumerable<IncidentTracker> Logs { get; set; }
 	}
 }

@@ -12,7 +12,7 @@ namespace HulkOut.Models.Data
 	/// 
 	/// </summary>
 	/// <seealso cref="HulkOut.Models.BaseModel" />
-	public class IncidentLog : BaseModel
+	public class IncidentTracker : BaseModel
 	{
 		/// <summary>
 		/// Gets or sets the incident identifier.
@@ -52,12 +52,12 @@ namespace HulkOut.Models.Data
 		public User LoggedByUser { get; set; }
 
 		/// <summary>
-		/// Gets or sets the trackers.
+		/// Gets or sets the tracker logs.
 		/// </summary>
 		/// <value>
-		/// The trackers.
+		/// The tracker logs.
 		/// </value>
-		public virtual IEnumerable<IncidentLogTracker> Trackers { get; set}
+		public virtual IEnumerable<IncidentTrackerLog> TrackerLogs { get; set}
 
 		/// <summary>
 		/// Gets the impact count.

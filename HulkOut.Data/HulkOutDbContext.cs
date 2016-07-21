@@ -19,7 +19,7 @@ namespace HulkOut.Data.EF
 
 		public DbSet<Incident> Incidents { get; set; }
 		public DbSet<IncidentCategory> IncidentCategories { get; set; }
-		public DbSet<IncidentLog> IncidentLogs { get; set; }
+		public DbSet<IncidentTracker> IncidentLogs { get; set; }
 
 		public DbSet<User> Users { get; set; }
 
