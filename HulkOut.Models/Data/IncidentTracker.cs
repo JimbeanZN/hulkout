@@ -70,7 +70,7 @@ namespace HulkOut.Models.Data
 		{
 			get
 			{
-				if (TrackerLogs.IsNotNullOrEmpty())
+				if (TrackerLogs.IsNotNullAndEmpty())
 				{
 					return TrackerLogs.Count();
 				}

@@ -9,12 +9,12 @@ namespace HulkOut.Core.Extensions
 	public static class EnumerableExtensions
 	{
 		/// <summary>
-		/// Determines whether a sequence is not null or empty.
+		/// Determines whether a sequence is not null and empty.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="source">The source.</param>
 		/// <returns></returns>
-		public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> source)
+		public static bool IsNotNullAndEmpty<T>(this IEnumerable<T> source)
 		{
 			return source != null && source.Any();
 		}
