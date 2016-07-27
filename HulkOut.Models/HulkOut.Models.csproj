@@ -44,12 +44,18 @@
     <Compile Include="Data\Audit.cs" />
     <Compile Include="Data\Incident.cs" />
     <Compile Include="Data\IncidentTracker.cs" />
-    <Compile Include="Data\IncidentLogTracker.cs" />
+    <Compile Include="Data\IncidentTrackerLog.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Enums\AuditEnums.cs" />
     <Compile Include="BaseModel.cs" />
     <Compile Include="Data\IncidentCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HulkOut.Core\HulkOut.Core.csproj">
+      <Project>{807530e3-ebd3-42e3-974f-0f02fa5f3dd9}</Project>
+      <Name>HulkOut.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

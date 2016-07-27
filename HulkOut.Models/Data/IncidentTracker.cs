@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HulkOut.Core.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -57,7 +58,7 @@ namespace HulkOut.Models.Data
 		/// <value>
 		/// The tracker logs.
 		/// </value>
-		public virtual IEnumerable<IncidentTrackerLog> TrackerLogs { get; set}
+		public virtual IEnumerable<IncidentTrackerLog> TrackerLogs { get; set; }
 
 		/// <summary>
 		/// Gets the impact count.
@@ -69,9 +70,9 @@ namespace HulkOut.Models.Data
 		{
 			get
 			{
-				if (Trackers != null && Trackers.Any())
+				if (TrackerLogs.IsNotNullOrEmpty())
 				{
-					return Trackers.Count();
+					return TrackerLogs.Count();
 				}
 
 				return 0;
