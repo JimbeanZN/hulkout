@@ -1,17 +1,14 @@
-﻿using HulkOut.Models.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using HulkOut.Models.Data;
 
 namespace HulkOut.Interfaces.DataAccess.Auditing
 {
 	public interface IAuditRepository
 	{
 		/// <summary>
-		/// Creates the specified audit.
+		///   Creates the specified audit.
 		/// </summary>
 		/// <param name="audit">The audit.</param>
 		/// <returns></returns>

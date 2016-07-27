@@ -1,10 +1,5 @@
-﻿using HulkOut.Models.Data;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
+using HulkOut.Models.Data;
 
 namespace HulkOut.Data.EF
 {
@@ -12,7 +7,6 @@ namespace HulkOut.Data.EF
 	{
 		public HulkOutDbContext() : base("HulkOutDbConnectionString")
 		{
-
 		}
 
 		public DbSet<Audit> Audits { get; set; }

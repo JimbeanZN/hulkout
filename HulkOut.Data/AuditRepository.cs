@@ -1,12 +1,9 @@
-﻿using HulkOut.Interfaces.DataAccess.Auditing;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HulkOut.Models.Data;
 using System.Linq.Expressions;
-using static HulkOut.Models.Enums.AuditEnums;
+using HulkOut.Interfaces.DataAccess.Auditing;
+using HulkOut.Models.Data;
 
 namespace HulkOut.Data.EF
 {
