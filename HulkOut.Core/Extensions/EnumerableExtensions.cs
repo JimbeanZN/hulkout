@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HulkOut.Core.Extensions
 {
 	public static class EnumerableExtensions
 	{
 		/// <summary>
-		/// Determines whether a sequence is not null and empty.
+		///   Determines whether a sequence is not null and empty.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="source">The source.</param>

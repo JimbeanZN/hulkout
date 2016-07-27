@@ -32,26 +32,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HulkOut.Interfaces\HulkOut.Interfaces.csproj">
-      <Project>{3251bc74-40af-4b64-ac4c-6607b46faafa}</Project>
-      <Name>HulkOut.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HulkOut.Models\HulkOut.Models.csproj">
-      <Project>{5a2edc31-49ce-4a71-be6c-f3013a26fdb6}</Project>
-      <Name>HulkOut.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
