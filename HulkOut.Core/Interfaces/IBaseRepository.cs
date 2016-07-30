@@ -1,32 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using HulkOut.Models;
+using HulkOut.Core.Models;
 
-namespace HulkOut.Interfaces.DataAccess
+namespace HulkOut.Core.Interfaces
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public interface IBaseService<T> where T : BaseModel
+	public interface IBaseRepository<T> where T : BaseModel
 	{
 		/// <summary>
-		/// Gets the specified identifier.
-		/// </summary>
-		/// <param name="id">The identifier.</param>
-		/// <returns></returns>
-		T Get(Guid id);
-
-		/// <summary>
-		/// Get all by the specified filter.
+		/// Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		IEnumerable<T> GetAll(Expression<Func<T, bool>> filter);
+		IEnumerable<T> Get(Expression<Func<T, bool>> filter);
 
 		/// <summary>
 		/// Inserts the specified model.

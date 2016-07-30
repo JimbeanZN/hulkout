@@ -41,7 +41,6 @@
     <Compile Include="Data\IncidentTrackerLog.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Enums\AuditEnums.cs" />
-    <Compile Include="BaseModel.cs" />
     <Compile Include="Data\IncidentCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

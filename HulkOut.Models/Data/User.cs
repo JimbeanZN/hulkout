@@ -1,8 +1,10 @@
-﻿namespace HulkOut.Models.Data
+﻿using HulkOut.Core.Models;
+
+namespace HulkOut.Models.Data
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="HulkOut.Models.BaseModel" />
+	/// <seealso cref="BaseModel" />
 	public class User : BaseModel
 	{
 		/// <summary>

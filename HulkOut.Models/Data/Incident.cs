@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using HulkOut.Core.Models;
 
 namespace HulkOut.Models.Data
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="HulkOut.Models.BaseModel" />
+	/// <seealso cref="BaseModel" />
 	public class Incident : BaseModel
 	{
 		/// <summary>

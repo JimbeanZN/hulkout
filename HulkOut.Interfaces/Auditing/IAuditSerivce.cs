@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using HulkOut.Core.Interfaces;
 using HulkOut.Models.Data;
-using static HulkOut.Models.Enums.AuditEnums;
+using HulkOut.Models.Enums;
 
-namespace HulkOut.Interfaces.DataAccess.Auditing
+namespace HulkOut.Interfaces.Auditing
 {
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <seealso cref="HulkOut.Core.Interfaces.IBaseService{HulkOut.Models.Data.Audit}" />
 	public interface IAuditSerivce : IBaseService<Audit>
 	{
 		/// <summary>
@@ -12,7 +15,7 @@ namespace HulkOut.Interfaces.DataAccess.Auditing
 		/// </summary>
 		/// <param name="description">The description.</param>
 		/// <param name="auditAction">The audit action.</param>
-		void WriteAudit(string description, AuditAction auditAction);
+		void WriteAudit(string description, AuditEnums.AuditAction auditAction);
 
 		/// <summary>
 		///   Writes the audit.
@@ -22,6 +25,6 @@ namespace HulkOut.Interfaces.DataAccess.Auditing
 		/// <param name="auditAction">The audit action.</param>
 		/// <param name="originalObject">The original object.</param>
 		/// <param name="newObject">The new object.</param>
-		void WriteAudit<T>(string description, AuditAction action, T originalObject, T newObject);
+		void WriteAudit<T>(string description, AuditEnums.AuditAction action, T originalObject, T newObject);
 	}
 }

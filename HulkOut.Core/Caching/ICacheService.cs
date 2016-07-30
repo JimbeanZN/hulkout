@@ -1,4 +1,4 @@
-﻿namespace HulkOut.Interfaces.DataAccess
+﻿namespace HulkOut.Core.Caching
 {
 	/// <summary>
 	/// </summary>

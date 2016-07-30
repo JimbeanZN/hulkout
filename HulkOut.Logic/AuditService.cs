@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using HulkOut.Interfaces.DataAccess.Auditing;
+using HulkOut.Interfaces.Auditing;
 using HulkOut.Models.Data;
 using HulkOut.Models.Enums;
 
@@ -10,7 +10,7 @@ namespace HulkOut.Logic
 	/// <summary>
 	/// 
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.DataAccess.Auditing.IAuditSerivce" />
+	/// <seealso cref="IAuditSerivce" />
 	public class AuditService : IAuditSerivce
 	{
 		/// <summary>
