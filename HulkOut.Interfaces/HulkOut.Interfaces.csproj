@@ -36,6 +36,8 @@
   <ItemGroup>
     <Compile Include="DataAccess\Auditing\IAuditRepository.cs" />
     <Compile Include="DataAccess\Auditing\IAuditSerivce.cs" />
+    <Compile Include="DataAccess\IBaseService.cs" />
+    <Compile Include="DataAccess\IBaseRepository.cs" />
     <Compile Include="DataAccess\IDataService.cs" />
     <Compile Include="DataAccess\ICacheService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

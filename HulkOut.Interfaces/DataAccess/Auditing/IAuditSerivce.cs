@@ -5,7 +5,7 @@ using static HulkOut.Models.Enums.AuditEnums;
 
 namespace HulkOut.Interfaces.DataAccess.Auditing
 {
-	public interface IAuditSerivce
+	public interface IAuditSerivce : IBaseService<Audit>
 	{
 		/// <summary>
 		///   Writes the audit.
@@ -23,20 +23,5 @@ namespace HulkOut.Interfaces.DataAccess.Auditing
 		/// <param name="originalObject">The original object.</param>
 		/// <param name="newObject">The new object.</param>
 		void WriteAudit<T>(string description, AuditAction action, T originalObject, T newObject);
-
-		/// <summary>
-		///   Gets the audit.
-		/// </summary>
-		/// <param name="Id">The identifier.</param>
-		/// <returns></returns>
-		Audit GetAudit(Guid Id);
-
-		/// <summary>
-		///   Gets the audit list.
-		/// </summary>
-		/// <param name="Entity">The entity.</param>
-		/// <param name="EntityId">The entity identifier.</param>
-		/// <returns></returns>
-		IEnumerable<Audit> GetAuditList(string Entity, Guid EntityId);
 	}
 }
