@@ -119,7 +119,7 @@
       <Project>{807530e3-ebd3-42e3-974f-0f02fa5f3dd9}</Project>
       <Name>HulkOut.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HulkOut.Data\HulkOut.Data.EF.csproj">
+    <ProjectReference Include="..\HulkOut.Data.EF\HulkOut.Data.EF.csproj">
       <Project>{e5dc4212-3aee-4915-8783-1a72b4fbf376}</Project>
       <Name>HulkOut.Data.EF</Name>
     </ProjectReference>

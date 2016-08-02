@@ -35,8 +35,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\ICacheService.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IBaseRepository.cs" />
     <Compile Include="Interfaces\IBaseService.cs" />
     <Compile Include="Models\BaseModel.cs" />

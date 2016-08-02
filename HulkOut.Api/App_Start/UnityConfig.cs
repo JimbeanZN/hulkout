@@ -1,8 +1,7 @@
-using Microsoft.Practices.Unity;
 using System.Web.Http;
-using HulkOut.Data.EF;
 using HulkOut.Data.EF.Auditing;
 using HulkOut.Interfaces.Auditing;
+using Microsoft.Practices.Unity;
 using Unity.WebApi;
 
 namespace HulkOut.Api

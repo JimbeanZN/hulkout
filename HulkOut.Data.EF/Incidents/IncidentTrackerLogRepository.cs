@@ -3,40 +3,40 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using HulkOut.Interfaces.Users;
+using HulkOut.Interfaces.Incidents;
 using HulkOut.Models.Data;
 
-namespace HulkOut.Data.EF.Users
+namespace HulkOut.Data.EF.Incidents
 {
 	/// <summary>
-	/// 
+	///   S
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.Users.IUserRepository" />
-	public class UserRepository : IUserRepository
+	/// <seealso cref="HulkOut.Interfaces.Incidents.IIncidentTrackerLogRepository" />
+	public class IncidentTrackerLogRepository : IIncidentTrackerLogRepository
 	{
 		/// <summary>
-		/// Gets the specified filter.
+		///   Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		public IEnumerable<User> Get(Expression<Func<User, bool>> filter)
+		public IEnumerable<IncidentTrackerLog> Get(Expression<Func<IncidentTrackerLog, bool>> filter)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				return db.Users.Where(a => !a.IsDeleted).Where(filter).ToList();
+				return db.IncidentTrackerLogs.Where(a => !a.IsDeleted).Where(filter).ToList();
 			}
 		}
 
 		/// <summary>
-		/// Inserts the specified model.
+		///   Inserts the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public User Insert(User model)
+		public IncidentTrackerLog Insert(IncidentTrackerLog model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.Users.Add(model);
+				db.IncidentTrackerLogs.Add(model);
 				db.Entry(model).State = EntityState.Added;
 				db.SaveChanges();
 
@@ -45,15 +45,15 @@ namespace HulkOut.Data.EF.Users
 		}
 
 		/// <summary>
-		/// Updates the specified model.
+		///   Updates the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public User Update(User model)
+		public IncidentTrackerLog Update(IncidentTrackerLog model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.Users.Add(model);
+				db.IncidentTrackerLogs.Add(model);
 				db.Entry(model).State = EntityState.Modified;
 				db.SaveChanges();
 
@@ -62,7 +62,7 @@ namespace HulkOut.Data.EF.Users
 		}
 
 		/// <summary>
-		/// Deletes the specified identifier.
+		///   Deletes the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
@@ -70,7 +70,7 @@ namespace HulkOut.Data.EF.Users
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				var model = db.Users.FirstOrDefault(a => a.Id == id);
+				var model = db.IncidentTrackerLogs.FirstOrDefault(a => a.Id == id);
 				if (model == null) return false;
 
 				model.IsDeleted = true;

@@ -8,13 +8,12 @@ using HulkOut.Models.Data;
 namespace HulkOut.Data.EF.Auditing
 {
 	/// <summary>
-	/// 
 	/// </summary>
 	/// <seealso cref="HulkOut.Interfaces.Auditing.IAuditRepository" />
 	public class AuditRepository : IAuditRepository
 	{
 		/// <summary>
-		/// Gets the specified filter.
+		///   Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
@@ -27,7 +26,7 @@ namespace HulkOut.Data.EF.Auditing
 		}
 
 		/// <summary>
-		/// Inserts the specified model.
+		///   Inserts the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
@@ -43,7 +42,7 @@ namespace HulkOut.Data.EF.Auditing
 		}
 
 		/// <summary>
-		/// Updates the specified model.
+		///   Updates the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
@@ -54,7 +53,7 @@ namespace HulkOut.Data.EF.Auditing
 		}
 
 		/// <summary>
-		/// Deletes the specified identifier.
+		///   Deletes the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>

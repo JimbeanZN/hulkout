@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace HulkOut.Logic.Tests
 {
@@ -24,10 +19,7 @@ namespace HulkOut.Logic.Tests
 			var auditService = AuditService();
 
 			//act
-			var result = Assert.Throws<ArgumentNullException>(() =>
-			{
-				auditService.GetAll(null);
-			});
+			var result = Assert.Throws<ArgumentNullException>(() => { auditService.GetAll(null); });
 
 			//assert
 			Assert.NotNull(result);

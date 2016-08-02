@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using HulkOut.Core.Extensions;
 using NUnit.Framework;
 
-namespace HulkOut.Core.Tests.Extensions
+namespace HulkOut.Core.Extensions.Tests
 {
 	[TestFixture]
 	public class EnumerableExtensionsTests

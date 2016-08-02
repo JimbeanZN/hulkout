@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using HulkOut.Models.Data;
 using System.Data.Entity.Core.Objects;
-using System.Linq;
-using System.Threading;
+using System.Data.Entity.Infrastructure;
 using HulkOut.Core.Models;
+using HulkOut.Models.Data;
 
 namespace HulkOut.Data.EF
 {
@@ -13,9 +11,18 @@ namespace HulkOut.Data.EF
 	{
 		public HulkOutDbContext() : base("HulkOutDbConnectionString")
 		{
-			var context = ((IObjectContextAdapter)this).ObjectContext;
+			var context = ((IObjectContextAdapter) this).ObjectContext;
 			context.SavingChanges += ContextOnSavingChanges;
 		}
+
+		public DbSet<Audit> Audits { get; set; }
+
+		public DbSet<Incident> Incidents { get; set; }
+		public DbSet<IncidentCategory> IncidentCategories { get; set; }
+		public DbSet<IncidentTracker> IncidentTrackers { get; set; }
+		public DbSet<IncidentTrackerLog> IncidentTrackerLogs { get; set; }
+
+		public DbSet<User> Users { get; set; }
 
 		private static void ContextOnSavingChanges(object sender, EventArgs eventArgs)
 		{
@@ -26,7 +33,7 @@ namespace HulkOut.Data.EF
 
 				foreach (var entry in context.ObjectStateManager.GetObjectStateEntries(EntityState.Added | EntityState.Modified))
 				{
-					var baseModel = ((BaseModel)entry.Entity);
+					var baseModel = (BaseModel) entry.Entity;
 
 					baseModel.LastUpdatedDate = date;
 					baseModel.LastUpdatedByUserId = userId;
@@ -38,15 +45,6 @@ namespace HulkOut.Data.EF
 				}
 			}
 		}
-
-		public DbSet<Audit> Audits { get; set; }
-
-		public DbSet<Incident> Incidents { get; set; }
-		public DbSet<IncidentCategory> IncidentCategories { get; set; }
-		public DbSet<IncidentTracker> IncidentTrackers { get; set; }
-		public DbSet<IncidentTrackerLog> IncidentTrackerLogs { get; set; }
-
-		public DbSet<User> Users { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

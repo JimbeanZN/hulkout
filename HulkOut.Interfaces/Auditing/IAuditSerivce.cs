@@ -5,7 +5,6 @@ using HulkOut.Models.Enums;
 namespace HulkOut.Interfaces.Auditing
 {
 	/// <summary>
-	/// 
 	/// </summary>
 	/// <seealso cref="HulkOut.Core.Interfaces.IBaseService{HulkOut.Models.Data.Audit}" />
 	public interface IAuditSerivce : IBaseService<Audit>

@@ -7,8 +7,8 @@
     <ProjectGuid>{C6AE6578-0EEA-4174-BDAC-175753D9C4AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HulkOut.Core.Tests</RootNamespace>
-    <AssemblyName>HulkOut.Core.Tests</AssemblyName>
+    <RootNamespace>HulkOut.Core.Extensions.Tests</RootNamespace>
+    <AssemblyName>HulkOut.Core.Extensions.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,13 +38,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
+    <Compile Include="EnumerableExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HulkOut.Core.Extensions\HulkOut.Core.Extensions.csproj">
+      <Project>{97b76ee6-80db-43d1-b776-b2036bcdda40}</Project>
+      <Name>HulkOut.Core.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HulkOut.Core\HulkOut.Core.csproj">
       <Project>{807530e3-ebd3-42e3-974f-0f02fa5f3dd9}</Project>
       <Name>HulkOut.Core</Name>

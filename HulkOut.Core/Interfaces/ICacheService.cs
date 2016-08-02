@@ -1,4 +1,4 @@
-﻿namespace HulkOut.Core.Caching
+﻿namespace HulkOut.Core.Interfaces
 {
 	/// <summary>
 	/// </summary>
