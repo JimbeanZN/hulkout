@@ -9,34 +9,33 @@ using HulkOut.Models.Data;
 namespace HulkOut.Data.EF.Incidents
 {
 	/// <summary>
-	/// 
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.Incidents.IIncidentRepository" />
-	public class IncidentRepository : IIncidentRepository
+	/// <seealso cref="HulkOut.Interfaces.Incidents.IIncidentCategoryRepository" />
+	public class IncidentCategoryRepository : IIncidentCategoryRepository
 	{
 		/// <summary>
-		/// Gets the specified filter.
+		///   Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		public IEnumerable<Incident> Get(Expression<Func<Incident, bool>> filter)
+		public IEnumerable<IncidentCategory> Get(Expression<Func<IncidentCategory, bool>> filter)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				return db.Incidents.Where(a => !a.IsDeleted).Where(filter).ToList();
+				return db.IncidentCategories.Where(a => !a.IsDeleted).Where(filter).ToList();
 			}
 		}
 
 		/// <summary>
-		/// Inserts the specified model.
+		///   Inserts the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public Incident Insert(Incident model)
+		public IncidentCategory Insert(IncidentCategory model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.Incidents.Add(model);
+				db.IncidentCategories.Add(model);
 				db.Entry(model).State = EntityState.Added;
 				db.SaveChanges();
 
@@ -45,15 +44,15 @@ namespace HulkOut.Data.EF.Incidents
 		}
 
 		/// <summary>
-		/// Updates the specified model.
+		///   Updates the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public Incident Update(Incident model)
+		public IncidentCategory Update(IncidentCategory model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.Incidents.Add(model);
+				db.IncidentCategories.Add(model);
 				db.Entry(model).State = EntityState.Modified;
 				db.SaveChanges();
 
@@ -62,7 +61,7 @@ namespace HulkOut.Data.EF.Incidents
 		}
 
 		/// <summary>
-		/// Deletes the specified identifier.
+		///   Deletes the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
@@ -70,7 +69,7 @@ namespace HulkOut.Data.EF.Incidents
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				var model = db.Incidents.FirstOrDefault(a => a.Id == id);
+				var model = db.IncidentCategories.FirstOrDefault(a => a.Id == id);
 				if (model == null) return false;
 
 				model.IsDeleted = true;

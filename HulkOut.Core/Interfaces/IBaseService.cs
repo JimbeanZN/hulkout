@@ -6,41 +6,40 @@ using HulkOut.Core.Models;
 namespace HulkOut.Core.Interfaces
 {
 	/// <summary>
-	/// 
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public interface IBaseService<T> where T : BaseModel
 	{
 		/// <summary>
-		/// Gets the specified identifier.
+		///   Gets the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
 		T Get(Guid id);
 
 		/// <summary>
-		/// Get all by the specified filter.
+		///   Get all by the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
 		IEnumerable<T> GetAll(Expression<Func<T, bool>> filter);
 
 		/// <summary>
-		/// Inserts the specified model.
+		///   Inserts the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
 		T Insert(T model);
 
 		/// <summary>
-		/// Updates the specified model.
+		///   Updates the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
 		T Update(T model);
 
 		/// <summary>
-		/// Deletes the specified identifier.
+		///   Deletes the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>

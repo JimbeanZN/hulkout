@@ -8,13 +8,12 @@ using HulkOut.Models.Enums;
 namespace HulkOut.Logic
 {
 	/// <summary>
-	/// 
 	/// </summary>
 	/// <seealso cref="IAuditSerivce" />
 	public class AuditService : IAuditSerivce
 	{
 		/// <summary>
-		/// Deletes the specified identifier.
+		///   Deletes the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
@@ -25,7 +24,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Gets the specified identifier.
+		///   Gets the specified identifier.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
@@ -35,7 +34,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Get all by the specified filter.
+		///   Get all by the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
@@ -45,7 +44,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Inserts the specified model.
+		///   Inserts the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
@@ -56,7 +55,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Updates the specified model.
+		///   Updates the specified model.
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
@@ -67,7 +66,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Writes the audit.
+		///   Writes the audit.
 		/// </summary>
 		/// <param name="description">The description.</param>
 		/// <param name="auditAction">The audit action.</param>
@@ -78,7 +77,7 @@ namespace HulkOut.Logic
 		}
 
 		/// <summary>
-		/// Writes the audit.
+		///   Writes the audit.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="description">The description.</param>
