@@ -18,6 +18,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HulkOut.Interfaces\HulkOut.Interfaces.csproj" />
+    <ProjectReference Include="..\HulkOut.Logic\HulkOut.Logic.csproj" />
+    <ProjectReference Include="..\HulkOut.Models\HulkOut.Models.csproj" />
     <ProjectReference Include="..\HulkOut.Utils\HulkOut.Utils.csproj" />
   </ItemGroup>
 
