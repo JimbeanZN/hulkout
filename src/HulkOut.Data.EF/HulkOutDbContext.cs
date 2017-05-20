@@ -1,18 +1,19 @@
-﻿using System;
-using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.Infrastructure;
-using HulkOut.Core.Models;
-using HulkOut.Models.Data;
+﻿using HulkOut.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HulkOut.Data.EF
 {
 	public class HulkOutDbContext : DbContext
 	{
-		public HulkOutDbContext() : base("HulkOutDbConnectionString")
+		public HulkOutDbContext()
 		{
-			var context = ((IObjectContextAdapter) this).ObjectContext;
-			context.SavingChanges += ContextOnSavingChanges;
+			//var context = ((IObjectContextAdapter) this).ObjectContext;
+			//context.SavingChanges += ContextOnSavingChanges;
+		}
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			//optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
 		}
 
 		public DbSet<Audit> Audits { get; set; }
@@ -24,29 +25,29 @@ namespace HulkOut.Data.EF
 
 		public DbSet<User> Users { get; set; }
 
-		private static void ContextOnSavingChanges(object sender, EventArgs eventArgs)
-		{
-			var context = (ObjectContext) sender;
-			{
-				var userId = new Guid();
-				var date = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
+		//private static void ContextOnSavingChanges(object sender, EventArgs eventArgs)
+		//{
+		//	var context = (ObjectContext) sender;
+		//	{
+		//		var userId = new Guid();
+		//		var date = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
 
-				foreach (var entry in context.ObjectStateManager.GetObjectStateEntries(EntityState.Added | EntityState.Modified))
-				{
-					var baseModel = (BaseModel) entry.Entity;
+		//		foreach (var entry in context.ObjectStateManager.GetObjectStateEntries(EntityState.Added | EntityState.Modified))
+		//		{
+		//			var baseModel = (BaseModel) entry.Entity;
 
-					baseModel.LastUpdatedDate = date;
-					baseModel.LastUpdatedByUserId = userId;
+		//			baseModel.LastUpdatedDate = date;
+		//			baseModel.LastUpdatedByUserId = userId;
 
-					if (entry.State != EntityState.Added) continue;
+		//			if (entry.State != EntityState.Added) continue;
 
-					baseModel.CreatedDate = date;
-					baseModel.CreatedByUserId = userId;
-				}
-			}
-		}
+		//			baseModel.CreatedDate = date;
+		//			baseModel.CreatedByUserId = userId;
+		//		}
+		//	}
+		//}
 
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			//Configure domain classes using Fluent API here
 

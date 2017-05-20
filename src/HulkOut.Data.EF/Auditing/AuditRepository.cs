@@ -46,7 +46,7 @@ namespace HulkOut.Data.EF.Auditing
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		/// <exception cref="System.NotImplementedException"></exception>
+		/// <exception cref="NotImplementedException"></exception>
 		public Audit Update(Audit model)
 		{
 			throw new NotImplementedException();
@@ -57,7 +57,7 @@ namespace HulkOut.Data.EF.Auditing
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
-		/// <exception cref="System.NotImplementedException"></exception>
+		/// <exception cref="NotImplementedException"></exception>
 		public bool Delete(Guid id)
 		{
 			throw new NotImplementedException();
