@@ -1,9 +1,9 @@
-﻿using System;
+﻿using HulkOut.Interfaces.Auditing;
+using HulkOut.Models.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using HulkOut.Interfaces.Auditing;
-using HulkOut.Models.Data;
 
 namespace HulkOut.Data.EF.Auditing
 {

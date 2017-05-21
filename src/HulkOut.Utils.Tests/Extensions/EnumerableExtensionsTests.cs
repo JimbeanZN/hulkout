@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using HulkOut.Utils.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace HulkOut.Utils.Tests.Extensions
 {

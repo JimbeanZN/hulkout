@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using HulkOut.Interfaces.Auditing;
+﻿using HulkOut.Interfaces.Auditing;
 using HulkOut.Models.Data;
 using HulkOut.Models.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace HulkOut.Logic
 {
