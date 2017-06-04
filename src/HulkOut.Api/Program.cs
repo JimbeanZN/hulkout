@@ -1,20 +1,20 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using System.IO;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace HulkOut.Api
 {
 	public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseStartup<Startup>()
-                .UseApplicationInsights()
-                .Build();
+	{
+		public static void Main(string[] args)
+		{
+			var host = new WebHostBuilder()
+				.UseKestrel()
+				.UseContentRoot(Directory.GetCurrentDirectory())
+				.UseStartup<Startup>()
+				.UseApplicationInsights()
+				.Build();
 
-            host.Run();
-        }
-    }
+			host.Run();
+		}
+	}
 }

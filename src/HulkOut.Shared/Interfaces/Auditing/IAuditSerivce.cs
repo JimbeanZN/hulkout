@@ -1,7 +1,7 @@
-﻿using HulkOut.Models.Data;
-using HulkOut.Models.Enums;
+﻿using HulkOut.Shared.Models.Data;
+using HulkOut.Shared.Models.Enums;
 
-namespace HulkOut.Interfaces.Auditing
+namespace HulkOut.Shared.Interfaces.Auditing
 {
 	/// <summary>
 	/// </summary>

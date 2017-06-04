@@ -1,6 +1,6 @@
-﻿using HulkOut.Models.Data;
+﻿using HulkOut.Shared.Models.Data;
 
-namespace HulkOut.Interfaces.Auditing
+namespace HulkOut.Shared.Interfaces.Auditing
 {
 	/// <summary>
 	/// </summary>

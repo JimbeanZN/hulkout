@@ -1,4 +1,4 @@
-﻿namespace HulkOut.Interfaces
+﻿namespace HulkOut.Shared.Interfaces
 {
 	/// <summary>
 	/// </summary>

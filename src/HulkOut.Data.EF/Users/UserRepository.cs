@@ -1,16 +1,16 @@
-﻿using HulkOut.Interfaces.Users;
-using HulkOut.Models.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using HulkOut.Shared.Interfaces.Users;
+using HulkOut.Shared.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HulkOut.Data.EF.Users
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.Users.IUserRepository" />
+	/// <seealso cref="IUserRepository" />
 	public class UserRepository : IUserRepository
 	{
 		/// <summary>

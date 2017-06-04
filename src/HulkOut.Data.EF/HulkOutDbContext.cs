@@ -1,21 +1,10 @@
-﻿using HulkOut.Models.Data;
+﻿using HulkOut.Shared.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace HulkOut.Data.EF
 {
 	public class HulkOutDbContext : DbContext
 	{
-		public HulkOutDbContext()
-		{
-			//var context = ((IObjectContextAdapter) this).ObjectContext;
-			//context.SavingChanges += ContextOnSavingChanges;
-		}
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			//optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
-		}
-
 		public DbSet<Audit> Audits { get; set; }
 
 		public DbSet<Incident> Incidents { get; set; }
@@ -24,6 +13,11 @@ namespace HulkOut.Data.EF
 		public DbSet<IncidentTrackerLog> IncidentTrackerLogs { get; set; }
 
 		public DbSet<User> Users { get; set; }
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			//optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");
+		}
 
 		//private static void ContextOnSavingChanges(object sender, EventArgs eventArgs)
 		//{

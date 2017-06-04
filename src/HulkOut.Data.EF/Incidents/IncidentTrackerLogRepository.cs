@@ -1,17 +1,17 @@
-﻿using HulkOut.Interfaces.Incidents;
-using HulkOut.Models.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using HulkOut.Shared.Interfaces.Incidents;
+using HulkOut.Shared.Models.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HulkOut.Data.EF.Incidents
 {
 	/// <summary>
 	///   S
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.Incidents.IIncidentTrackerLogRepository" />
+	/// <seealso cref="IIncidentTrackerLogRepository" />
 	public class IncidentTrackerLogRepository : IIncidentTrackerLogRepository
 	{
 		/// <summary>

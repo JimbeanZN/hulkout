@@ -1,15 +1,15 @@
-﻿using HulkOut.Interfaces.Auditing;
-using HulkOut.Models.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using HulkOut.Shared.Interfaces.Auditing;
+using HulkOut.Shared.Models.Data;
 
 namespace HulkOut.Data.EF.Auditing
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.Auditing.IAuditRepository" />
+	/// <seealso cref="IAuditRepository" />
 	public class AuditRepository : IAuditRepository
 	{
 		/// <summary>

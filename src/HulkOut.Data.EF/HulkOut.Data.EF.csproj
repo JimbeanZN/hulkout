@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HulkOut.Interfaces\HulkOut.Interfaces.csproj" />
-    <ProjectReference Include="..\HulkOut.Models\HulkOut.Models.csproj" />
+    <ProjectReference Include="..\HulkOut.Shared\HulkOut.Shared.csproj" />
     <ProjectReference Include="..\HulkOut.Utils\HulkOut.Utils.csproj" />
   </ItemGroup>
 

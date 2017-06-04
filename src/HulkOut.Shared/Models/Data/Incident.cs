@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HulkOut.Models.Data
+namespace HulkOut.Shared.Models.Data
 {
 	/// <summary>
 	/// </summary>

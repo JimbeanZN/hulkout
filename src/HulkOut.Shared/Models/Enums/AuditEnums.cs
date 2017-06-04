@@ -1,4 +1,4 @@
-﻿namespace HulkOut.Models.Enums
+﻿namespace HulkOut.Shared.Models.Enums
 {
 	public static class AuditEnums
 	{

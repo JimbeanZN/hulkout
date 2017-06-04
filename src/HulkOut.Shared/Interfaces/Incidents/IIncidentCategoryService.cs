@@ -1,6 +1,6 @@
-﻿using HulkOut.Models.Data;
+﻿using HulkOut.Shared.Models.Data;
 
-namespace HulkOut.Interfaces.Incidents
+namespace HulkOut.Shared.Interfaces.Incidents
 {
 	/// <summary>
 	/// </summary>

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using HulkOut.Utils.Extensions;
 
-namespace HulkOut.Models.Data
+namespace HulkOut.Shared.Models.Data
 {
 	/// <summary>
 	/// </summary>

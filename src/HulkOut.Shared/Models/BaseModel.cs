@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace HulkOut.Models
+namespace HulkOut.Shared.Models
 {
 	/// <summary>
 	/// </summary>

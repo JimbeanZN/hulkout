@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static HulkOut.Models.Enums.AuditEnums;
+using HulkOut.Shared.Models.Enums;
 
-namespace HulkOut.Models.Data
+namespace HulkOut.Shared.Models.Data
 {
 	/// <summary>
 	/// </summary>
@@ -53,10 +53,7 @@ namespace HulkOut.Models.Data
 		///   The audit description.
 		/// </value>
 		[NotMapped]
-		public string AuditDescription
-		{
-			get { return ((AuditAction) AuditAction).ToString(); }
-		}
+		public string AuditDescription => ((AuditEnums.AuditAction) AuditAction).ToString();
 
 		/// <summary>
 		///   Gets or sets the original json.
