@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.Swagger.Model;
 
 namespace HulkOut.Api
 {
@@ -25,6 +26,17 @@ namespace HulkOut.Api
 		{
 			// Add framework services.
 			services.AddMvc();
+
+			services.AddSwaggerGen(options =>
+			{
+				options.SingleApiVersion(new Info
+				{
+					Version = "v1",
+					Title = "Auth0 Swagger Sample API",
+					Description = "API Sample made for Auth0",
+					TermsOfService = "None"
+				});
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +45,11 @@ namespace HulkOut.Api
 			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 			loggerFactory.AddDebug();
 
+			/*Enabling swagger file*/
+			app.UseSwagger();
+			/*Enabling Swagger ui, consider doing it on Development env only*/
+			app.UseSwaggerUi();
+			/*Normal MVC mappings*/
 			app.UseMvc();
 		}
 	}
