@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using HulkOut.Data.EF;
+using HulkOut.Shared.Interfaces.Categories;
+using HulkOut.Shared.Interfaces.Hulk;
+using HulkOut.Shared.Interfaces.ImpactLogs;
+using HulkOut.Shared.Interfaces.Incidents;
+using HulkOut.Shared.Interfaces.Users;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +49,12 @@ namespace HulkOut.Api
 			ConfigureSwaggerGen(services, configurationSection);
 
 			services.AddMvc();
+
+			services.AddTransient<ICategoryRepository, CategoryRepository>();
+			services.AddTransient<IHulkRepository, HulkRepository>();
+			services.AddTransient<IImpactLogRepository, ImpactLogRepository>();
+			services.AddTransient<IIncidentRepository, IncidentRepository>();
+			services.AddTransient<IUserRepository, UserRepository>();
 		}
 
 		/// <summary>
