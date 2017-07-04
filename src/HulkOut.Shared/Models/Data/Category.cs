@@ -5,7 +5,7 @@ namespace HulkOut.Shared.Models.Data
 	/// <summary>
 	/// </summary>
 	/// <seealso cref="BaseModel" />
-	public class IncidentCategory : BaseModel
+	public class Category : BaseModel
 	{
 		/// <summary>
 		///   Gets or sets the title.

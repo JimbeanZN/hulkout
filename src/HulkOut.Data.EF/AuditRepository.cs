@@ -2,27 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using HulkOut.Shared.Interfaces.Users;
+using HulkOut.Shared.Interfaces.Auditing;
 using HulkOut.Shared.Models.Data;
-using Microsoft.EntityFrameworkCore;
 
-namespace HulkOut.Data.EF.Users
+namespace HulkOut.Data.EF
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="IUserRepository" />
-	public class UserRepository : IUserRepository
+	/// <seealso cref="IAuditRepository" />
+	public class AuditRepository : IAuditRepository
 	{
 		/// <summary>
 		///   Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		public IEnumerable<User> Get(Expression<Func<User, bool>> filter)
+		public IEnumerable<Audit> Get(Expression<Func<Audit, bool>> filter)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				return db.Users.Where(a => !a.IsDeleted).Where(filter).ToList();
+				return db.Audits.Where(a => !a.IsDeleted).Where(filter).ToList();
 			}
 		}
 
@@ -31,12 +30,11 @@ namespace HulkOut.Data.EF.Users
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public User Insert(User model)
+		public Audit Insert(Audit model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.Users.Add(model);
-				db.Entry(model).State = EntityState.Added;
+				db.Audits.Add(model);
 				db.SaveChanges();
 
 				return model;
@@ -48,16 +46,10 @@ namespace HulkOut.Data.EF.Users
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public User Update(User model)
+		/// <exception cref="NotImplementedException"></exception>
+		public Audit Update(Audit model)
 		{
-			using (var db = new HulkOutDbContext())
-			{
-				db.Users.Add(model);
-				db.Entry(model).State = EntityState.Modified;
-				db.SaveChanges();
-
-				return model;
-			}
+			throw new NotImplementedException();
 		}
 
 		/// <summary>
@@ -65,18 +57,10 @@ namespace HulkOut.Data.EF.Users
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
+		/// <exception cref="NotImplementedException"></exception>
 		public bool Delete(Guid id)
 		{
-			using (var db = new HulkOutDbContext())
-			{
-				var model = db.Users.FirstOrDefault(a => a.Id == id);
-				if (model == null) return false;
-
-				model.IsDeleted = true;
-				db.Entry(model).State = EntityState.Modified;
-				db.SaveChanges();
-				return true;
-			}
+			throw new NotImplementedException();
 		}
 	}
 }

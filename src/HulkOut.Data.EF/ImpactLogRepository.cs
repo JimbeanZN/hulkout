@@ -2,27 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using HulkOut.Shared.Interfaces.Incidents;
+using HulkOut.Shared.Interfaces.ImpactLogs;
 using HulkOut.Shared.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace HulkOut.Data.EF.Incidents
+namespace HulkOut.Data.EF
 {
 	/// <summary>
+	///   S
 	/// </summary>
-	/// <seealso cref="IIncidentTrackerRepository" />
-	public class IncidentTrackerRepository : IIncidentTrackerRepository
+	/// <seealso cref="IImpactLogRepository" />
+	public class ImpactLogRepository : IImpactLogRepository
 	{
 		/// <summary>
 		///   Gets the specified filter.
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		public IEnumerable<IncidentTracker> Get(Expression<Func<IncidentTracker, bool>> filter)
+		public IEnumerable<ImpactLog> Get(Expression<Func<ImpactLog, bool>> filter)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				return db.IncidentTrackers.Where(a => !a.IsDeleted).Where(filter).ToList();
+				return db.ImpactLogs.Where(a => !a.IsDeleted).Where(filter).ToList();
 			}
 		}
 
@@ -31,11 +32,11 @@ namespace HulkOut.Data.EF.Incidents
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public IncidentTracker Insert(IncidentTracker model)
+		public ImpactLog Insert(ImpactLog model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.IncidentTrackers.Add(model);
+				db.ImpactLogs.Add(model);
 				db.Entry(model).State = EntityState.Added;
 				db.SaveChanges();
 
@@ -48,11 +49,11 @@ namespace HulkOut.Data.EF.Incidents
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public IncidentTracker Update(IncidentTracker model)
+		public ImpactLog Update(ImpactLog model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				db.IncidentTrackers.Add(model);
+				db.ImpactLogs.Add(model);
 				db.Entry(model).State = EntityState.Modified;
 				db.SaveChanges();
 
@@ -69,7 +70,7 @@ namespace HulkOut.Data.EF.Incidents
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				var model = db.IncidentTrackers.FirstOrDefault(a => a.Id == id);
+				var model = db.ImpactLogs.FirstOrDefault(a => a.Id == id);
 				if (model == null) return false;
 
 				model.IsDeleted = true;

@@ -4,7 +4,7 @@ namespace HulkOut.Shared.Interfaces.Incidents
 {
 	/// <summary>
 	/// </summary>
-	/// <seealso cref="HulkOut.Interfaces.IBaseService{HulkOut.Models.Data.Incident}" />
+	/// <seealso cref="HulkOut.Shared.Interfaces.IBaseService{HulkOut.Shared.Models.Data.Incident}" />
 	public interface IIncidentService : IBaseService<Incident>
 	{
 	}

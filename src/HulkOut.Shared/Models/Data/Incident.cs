@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using HulkOut.Utils.Extensions;
 
 namespace HulkOut.Shared.Models.Data
 {
@@ -11,81 +13,56 @@ namespace HulkOut.Shared.Models.Data
 	public class Incident : BaseModel
 	{
 		/// <summary>
-		///   Gets or sets the title.
+		///   Gets or sets the Hulk identifier.
 		/// </summary>
 		/// <value>
-		///   The title.
+		///   The Hulk identifier.
 		/// </value>
+		[ForeignKey("Hulk")]
 		[Required]
-		public string Title { get; set; }
+		public Guid HulkId { get; set; }
 
 		/// <summary>
-		///   Gets or sets the description.
+		///   Gets or sets the incident.
 		/// </summary>
 		/// <value>
-		///   The description.
+		///   The incident.
 		/// </value>
-		public string Description { get; set; }
+		[NotMapped]
+		public Hulk Hulk { get; set; }
 
 		/// <summary>
-		///   Gets or sets the owner user identifier.
+		///   Gets or sets the logged by user identifier.
 		/// </summary>
 		/// <value>
-		///   The owner user identifier.
+		///   The logged by user identifier.
 		/// </value>
-		[ForeignKey("OwnerUserEntity")]
+		[ForeignKey("LoggedByUser")]
 		[Required]
-		public Guid OwnerUserId { get; set; }
+		public Guid LoggedByUserId { get; set; }
 
 		/// <summary>
-		///   Gets or sets the owner user entity.
+		///   Gets or sets the logged by user.
 		/// </summary>
 		/// <value>
-		///   The owner user entity.
+		///   The logged by user.
 		/// </value>
-		public User OwnerUserEntity { get; set; }
+		public User LoggedByUser { get; set; }
 
 		/// <summary>
-		///   Gets or sets the incident category identifier.
+		///   Gets or sets the impact logs.
 		/// </summary>
 		/// <value>
-		///   The incident category identifier.
+		///   The impact logs.
 		/// </value>
-		[ForeignKey("IncidentCategory")]
-		[Required]
-		public Guid IncidentCategoryId { get; set; }
+		public virtual IEnumerable<ImpactLog> ImpactLogs { get; set; }
 
 		/// <summary>
-		///   Gets or sets the incident category.
+		///   Gets the impact count.
 		/// </summary>
 		/// <value>
-		///   The incident category.
+		///   The impact count.
 		/// </value>
-		public IncidentCategory IncidentCategory { get; set; }
-
-		/// <summary>
-		///   Gets or sets a value indicating whether this instance can cooldown automatically.
-		/// </summary>
-		/// <value>
-		///   <c>true</c> if this instance can cooldown automatically; otherwise, <c>false</c>.
-		/// </value>
-		[Required]
-		public bool CanCooldownAutomatically { get; set; }
-
-		/// <summary>
-		///   Gets or sets the automatic cooldown period.
-		/// </summary>
-		/// <value>
-		///   The automatic cooldown period.
-		/// </value>
-		public TimeSpan? AutomaticCooldownPeriod { get; set; }
-
-		/// <summary>
-		///   Gets or sets the logs.
-		/// </summary>
-		/// <value>
-		///   The logs.
-		/// </value>
-		public virtual IEnumerable<IncidentTracker> Logs { get; set; }
+		public int ImpactCount => ImpactLogs.IsNullOrEmpty() ? 0 : ImpactLogs.Count();
 	}
 }

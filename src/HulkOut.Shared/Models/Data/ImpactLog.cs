@@ -7,24 +7,24 @@ namespace HulkOut.Shared.Models.Data
 	/// <summary>
 	/// </summary>
 	/// <seealso cref="BaseModel" />
-	public class IncidentTrackerLog : BaseModel
+	public class ImpactLog : BaseModel
 	{
 		/// <summary>
-		///   Gets or sets the incident tracker identifier.
+		///   Gets or sets the incident identifier.
 		/// </summary>
 		/// <value>
-		///   The incident tracker identifier.
+		///   The incident identifier.
 		/// </value>
-		[ForeignKey("IncidentTracker")]
+		[ForeignKey("Incident")]
 		[Required]
-		public Guid IncidentTrackerId { get; set; }
+		public Guid IncidentId { get; set; }
 
 		/// <summary>
-		///   Gets or sets the incident tracker.
+		///   Gets or sets the incident.
 		/// </summary>
 		/// <value>
-		///   The incident tracker.
+		///   The incident.
 		/// </value>
-		public IncidentTracker IncidentTracker { get; set; }
+		public Incident Incident { get; set; }
 	}
 }
