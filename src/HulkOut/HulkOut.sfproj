@@ -31,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HulkOut.Api\HulkOut.Api.csproj" />
+    <ProjectReference Include="..\HulkOut.Auditing\HulkOut.Auditing.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>
