@@ -1,7 +1,8 @@
 using System;
+using HulkOut.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HulkOut.Logic.Tests
+namespace HulkOut.Tests.Auditing
 {
 	[TestClass]
 	public class AuditServiceTests
