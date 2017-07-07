@@ -4,6 +4,11 @@
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DebugType>full</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\HulkOut.Shared\HulkOut.Shared.csproj" />
     <ProjectReference Include="..\HulkOut.Utils\HulkOut.Utils.csproj" />
