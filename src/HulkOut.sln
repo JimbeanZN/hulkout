@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HulkOut.Data.EF", "HulkOut.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HulkOut.Logic", "HulkOut.Logic\HulkOut.Logic.csproj", "{747ACC18-54EB-4770-B9FD-E06D5AD3E67D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HulkOut.Tests", "HulkOut.Tests\HulkOut.Tests.csproj", "{BCB7BA65-FE64-4608-ADBD-F11838DFB882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HulkOut.Tests", "Tests\HulkOut.Tests\HulkOut.Tests.csproj", "{BCB7BA65-FE64-4608-ADBD-F11838DFB882}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HulkOut.Auditing", "HulkOut.Auditing\HulkOut.Auditing.csproj", "{B35F20BE-76FF-40F8-8225-5186DA701F05}"
 EndProject

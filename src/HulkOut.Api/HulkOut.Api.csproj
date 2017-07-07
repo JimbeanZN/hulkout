@@ -5,6 +5,8 @@
 	<RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
@@ -18,8 +20,6 @@
     <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.WebListener" Version="2.6.220" />
     <PackageReference Include="Microsoft.ServiceFabric.Data" Version="2.6.220" />
     <PackageReference Include="Microsoft.ServiceFabric.Services" Version="2.6.220" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
     <PackageReference Include="Swashbuckle" Version="6.0.0-beta902" />
   </ItemGroup>
   <ItemGroup>

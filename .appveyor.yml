@@ -4,13 +4,16 @@ configuration: Release
 image: Visual Studio 2017
 
 before_build:
-    - cmd: nuget restore ./src/HulkOut.sln
-    - choco install opencover.portable
-    - choco install codecov
+- nuget restore ./src/HulkOut.sln
+- choco install opencover.portable
+- choco install codecov
 
 build:
-    project: ./src/HulkOut.sln
+  project: ./src/HulkOut.sln
 
 after_test:
-- OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\MSTest.exe" -targetargs:"/testcontainer:"".\src\HulkOut.Tests\bin\Release\net461\HulkOut.Tests.dll" -filter:"+[HulkOut.*]*" -excludebyattribute:*.ExcludeFromCodeCoverage* -output:"HulkOut_Coverage.xml"
+- OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\MSTest.exe" -targetargs:"/testcontainer:"".\src\Tests\HulkOut.Tests\bin\Release\net461\HulkOut.Tests.dll" -filter:"+[HulkOut.*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
 - codecov -f "HulkOut_Coverage.xml"
+
+artifacts:
+- path: HulkOut_Coverage.xml
