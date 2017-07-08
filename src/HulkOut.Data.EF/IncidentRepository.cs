@@ -47,9 +47,10 @@ namespace HulkOut.Data.EF
 		/// <summary>
 		///   Updates the specified model.
 		/// </summary>
+		/// <param name="id">The identifier.</param>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public async Task<Incident> Update(Incident model)
+		public async Task<Incident> Update(Guid id, Incident model)
 		{
 			using (var db = new HulkOutDbContext())
 			{

@@ -35,9 +35,10 @@ namespace HulkOut.Shared.Interfaces
 		/// <summary>
 		///   Updates the specified model.
 		/// </summary>
+		/// <param name="id">The identifier.</param>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		Task<T> Update(T model);
+		Task<T> Update(Guid id, T model);
 
 		/// <summary>
 		///   Deletes the specified identifier.

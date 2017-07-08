@@ -43,7 +43,7 @@ namespace HulkOut.Api.Controllers
 		[HttpPut("{id}")]
 		public async void Put(Guid id, [FromBody] User model)
 		{
-			await _userService.Update(model);
+			await _userService.Update(id, model);
 		}
 
 		// DELETE api/users/63AAB81D-3EB5-4564-849A-28260B523FE4

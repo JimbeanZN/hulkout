@@ -132,7 +132,7 @@ namespace HulkOut.Tests.Logic
 			var categoryService = CategoryService();
 
 			//act assert
-			await categoryService.Update(null);
+			await categoryService.Update(new Guid(), null);
 		}
 
 		[TestMethod]
@@ -141,9 +141,10 @@ namespace HulkOut.Tests.Logic
 			//arrange
 			var categoryService = CategoryService();
 
+			var passedGuid = new Guid();
 			var passedModel = new Category
 			{
-				Id = new Guid(),
+				Id = passedGuid,
 				Title = "Test Category",
 				Description = "Test Category Description",
 				LastUpdatedByUserId = new Guid(),
@@ -153,10 +154,10 @@ namespace HulkOut.Tests.Logic
 			expectedModel.LastUpdatedByUserId = new Guid();
 			expectedModel.LastUpdatedDate = expectedModel.LastUpdatedDate.AddDays(1);
 
-			_categoryRepository.Update(passedModel).Returns(expectedModel);
+			_categoryRepository.Update(passedGuid, passedModel).Returns(expectedModel);
 
 			//act
-			var result = categoryService.Update(passedModel).Result;
+			var result = categoryService.Update(passedGuid, passedModel).Result;
 
 			//assert
 			Assert.IsNotNull(result);

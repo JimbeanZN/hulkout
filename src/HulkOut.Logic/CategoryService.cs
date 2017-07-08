@@ -63,15 +63,16 @@ namespace HulkOut.Logic
 		/// <summary>
 		/// Updates the specified model.
 		/// </summary>
+		/// <param name="id">The identifier.</param>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">model</exception>
-		public async Task<Category> Update(Category model)
+		public async Task<Category> Update(Guid id, Category model)
 		{
 			if (model == null)
 				throw new ArgumentNullException(nameof(model));
 
-			return await _categoryRepository.Update(model);
+			return await _categoryRepository.Update(id, model);
 		}
 
 		/// <summary>
