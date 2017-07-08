@@ -72,7 +72,7 @@ namespace HulkOut.Auditing.Persistence
 			throw new NotImplementedException();
 		}
 
-		public Task<Audit> Update(Audit model)
+		public Task<Audit> Update(Guid id, Audit model)
 		{
 			throw new NotImplementedException();
 		}
