@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using HulkOut.Shared.Interfaces.Incidents;
 using HulkOut.Shared.Models.Data;
 using Microsoft.EntityFrameworkCore;
@@ -18,11 +19,11 @@ namespace HulkOut.Data.EF
 		/// </summary>
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
-		public IEnumerable<Incident> Get(Expression<Func<Incident, bool>> filter)
+		public async Task<IEnumerable<Incident>> Get(Expression<Func<Incident, bool>> filter)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				return db.Incidents.Where(a => !a.IsDeleted).Where(filter).ToList();
+				return await db.Incidents.Where(a => !a.IsDeleted).Where(filter).ToListAsync();
 			}
 		}
 
@@ -31,13 +32,13 @@ namespace HulkOut.Data.EF
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public Incident Insert(Incident model)
+		public async Task<Incident> Insert(Incident model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
 				db.Incidents.Add(model);
 				db.Entry(model).State = EntityState.Added;
-				db.SaveChanges();
+				await db.SaveChangesAsync();
 
 				return model;
 			}
@@ -48,13 +49,13 @@ namespace HulkOut.Data.EF
 		/// </summary>
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
-		public Incident Update(Incident model)
+		public async Task<Incident> Update(Incident model)
 		{
 			using (var db = new HulkOutDbContext())
 			{
 				db.Incidents.Add(model);
 				db.Entry(model).State = EntityState.Modified;
-				db.SaveChanges();
+				await db.SaveChangesAsync();
 
 				return model;
 			}
@@ -65,16 +66,16 @@ namespace HulkOut.Data.EF
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
-		public bool Delete(Guid id)
+		public async Task<bool> Delete(Guid id)
 		{
 			using (var db = new HulkOutDbContext())
 			{
-				var model = db.Incidents.FirstOrDefault(a => a.Id == id);
+				var model = await db.Incidents.FirstOrDefaultAsync(a => a.Id == id);
 				if (model == null) return false;
 
 				model.IsDeleted = true;
 				db.Entry(model).State = EntityState.Modified;
-				db.SaveChanges();
+				await db.SaveChangesAsync();
 				return true;
 			}
 		}

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using HulkOut.Logic;
 using HulkOut.Shared.Interfaces.Categories;
 using HulkOut.Shared.Models.Data;
@@ -35,7 +36,7 @@ namespace HulkOut.Tests.Logic
 				.Returns(new List<Category> {new Category {Id = guid1}, new Category {Id = new Guid()}});
 
 			//act
-			var result = categoryService.Get(Arg.Any<Guid>());
+			var result = categoryService.Get(Arg.Any<Guid>()).Result;
 
 			//assert
 			Assert.IsNotNull(result);
@@ -48,17 +49,14 @@ namespace HulkOut.Tests.Logic
 		#region GetAll
 
 		[TestMethod]
-		public void GetAll_GivenNullFilter_ThrowsError()
+		[ExpectedException(typeof(ArgumentNullException))]
+		public async Task GetAll_GivenNullFilter_ThrowsError()
 		{
 			//arrange
 			var categoryService = CategoryService();
 
-			//act
-			var result = Assert.ThrowsException<ArgumentNullException>(() => { categoryService.GetAll(null); });
-
-			//assert
-			Assert.IsNotNull(result);
-			Assert.AreEqual("filter", result.ParamName);
+			//act assert
+			await categoryService.GetAll(null);
 		}
 
 		[TestMethod]
@@ -71,7 +69,7 @@ namespace HulkOut.Tests.Logic
 				.Returns(new List<Category> {new Category(), new Category()});
 
 			//act
-			var result = categoryService.GetAll(model => true);
+			var result = categoryService.GetAll(model => true).Result;
 
 			//assert
 			Assert.IsNotNull(result);
@@ -85,17 +83,14 @@ namespace HulkOut.Tests.Logic
 		#region Insert
 
 		[TestMethod]
-		public void Insert_GivenNullModel_ThrowsError()
+		[ExpectedException(typeof(ArgumentNullException))]
+		public async Task Insert_GivenNullModel_ThrowsError()
 		{
 			//arrange
 			var categoryService = CategoryService();
 
-			//act
-			var result = Assert.ThrowsException<ArgumentNullException>(() => { categoryService.Insert(null); });
-
-			//assert
-			Assert.IsNotNull(result);
-			Assert.AreEqual("model", result.ParamName);
+			//act assert
+			await categoryService.Insert(null);
 		}
 
 		[TestMethod]
@@ -115,7 +110,7 @@ namespace HulkOut.Tests.Logic
 			_categoryRepository.Insert(passedModel).Returns(expectedModel);
 
 			//act
-			var result = categoryService.Insert(passedModel);
+			var result = categoryService.Insert(passedModel).Result;
 
 			//assert
 			Assert.IsNotNull(result);
@@ -130,17 +125,14 @@ namespace HulkOut.Tests.Logic
 		#region Update
 
 		[TestMethod]
-		public void Update_GivenNullModel_ThrowsError()
+		[ExpectedException(typeof(ArgumentNullException))]
+		public async Task Update_GivenNullModel_ThrowsError()
 		{
 			//arrange
 			var categoryService = CategoryService();
 
-			//act
-			var result = Assert.ThrowsException<ArgumentNullException>(() => { categoryService.Update(null); });
-
-			//assert
-			Assert.IsNotNull(result);
-			Assert.AreEqual("model", result.ParamName);
+			//act assert
+			await categoryService.Update(null);
 		}
 
 		[TestMethod]
@@ -164,7 +156,7 @@ namespace HulkOut.Tests.Logic
 			_categoryRepository.Update(passedModel).Returns(expectedModel);
 
 			//act
-			var result = categoryService.Update(passedModel);
+			var result = categoryService.Update(passedModel).Result;
 
 			//assert
 			Assert.IsNotNull(result);
@@ -187,7 +179,7 @@ namespace HulkOut.Tests.Logic
 			_categoryRepository.Delete(Arg.Any<Guid>()).Returns(true);
 
 			//act
-			var result = categoryService.Delete(Arg.Any<Guid>());
+			var result = categoryService.Delete(Arg.Any<Guid>()).Result;
 
 			//assert
 			Assert.IsNotNull(result);

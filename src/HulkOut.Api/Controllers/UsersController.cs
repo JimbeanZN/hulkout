@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using HulkOut.Shared.Interfaces.Users;
 using HulkOut.Shared.Models.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -19,16 +20,16 @@ namespace HulkOut.Api.Controllers
 
 		// GET api/users
 		[HttpGet]
-		public IEnumerable<User> Get()
+		public async Task<IEnumerable<User>> Get()
 		{
-			return _userService.GetAll(null);
+			return await _userService.GetAll(null);
 		}
 
 		// GET api/users/63AAB81D-3EB5-4564-849A-28260B523FE4
 		[HttpGet("{id}")]
-		public User Get(Guid id)
+		public async Task<User> Get(Guid id)
 		{
-			return _userService.Get(id);
+			return await _userService.Get(id);
 		}
 	}
 }
