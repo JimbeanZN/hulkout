@@ -15,6 +15,13 @@ namespace HulkOut.Logic
 	/// <seealso cref="HulkOut.Shared.Interfaces.Categories.ICategoryService" />
 	public class CategoryService : ICategoryService
 	{
+		private readonly ICategoryRepository _categoryRepository;
+
+		public CategoryService(ICategoryRepository categoryRepository)
+		{
+			_categoryRepository = categoryRepository;
+		}
+
 		/// <summary>
 		/// Gets the specified identifier.
 		/// </summary>
@@ -23,7 +30,7 @@ namespace HulkOut.Logic
 		/// <exception cref="NotImplementedException"></exception>
 		public Category Get(Guid id)
 		{
-			throw new NotImplementedException();
+			return GetAll(model => model.Id == id).FirstOrDefault();
 		}
 
 		/// <summary>
@@ -38,7 +45,7 @@ namespace HulkOut.Logic
 			if (filter == null)
 				throw new ArgumentNullException(nameof(filter));
 
-			throw new NotImplementedException();
+			return _categoryRepository.Get(filter);
 		}
 
 		/// <summary>
