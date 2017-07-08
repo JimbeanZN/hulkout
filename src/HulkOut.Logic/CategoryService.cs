@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using HulkOut.Shared.Interfaces.Hulk;
+using HulkOut.Shared.Interfaces.Categories;
 using HulkOut.Shared.Models.Data;
 
 namespace HulkOut.Logic
@@ -11,14 +11,14 @@ namespace HulkOut.Logic
 	/// <summary>
 	/// 
 	/// </summary>
-	/// <seealso cref="IHulkService" />
-	public class HulkService : IHulkService
+	/// <seealso cref="ICategoryService" />
+	public class CategoryService : ICategoryService
 	{
-		private readonly IHulkRepository _hulkRepository;
+		private readonly ICategoryRepository _categoryRepository;
 
-		public HulkService(IHulkRepository hulkRepository)
+		public CategoryService(ICategoryRepository categoryRepository)
 		{
-			_hulkRepository = hulkRepository;
+			_categoryRepository = categoryRepository;
 		}
 
 		/// <summary>
@@ -26,7 +26,7 @@ namespace HulkOut.Logic
 		/// </summary>
 		/// <param name="id">The identifier.</param>
 		/// <returns></returns>
-		public async Task<Hulk> Get(Guid id)
+		public async Task<Category> Get(Guid id)
 		{
 			var result = await GetAll(model => model.Id == id);	
 			return result.FirstOrDefault();
@@ -38,12 +38,12 @@ namespace HulkOut.Logic
 		/// <param name="filter">The filter.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">filter</exception>
-		public async Task<IEnumerable<Hulk>> GetAll(Expression<Func<Hulk, bool>> filter)
+		public async Task<IEnumerable<Category>> GetAll(Expression<Func<Category, bool>> filter)
 		{
 			if (filter == null)
 				throw new ArgumentNullException(nameof(filter));
 
-			return await _hulkRepository.Get(filter);
+			return await _categoryRepository.Get(filter);
 		}
 
 		/// <summary>
@@ -52,12 +52,12 @@ namespace HulkOut.Logic
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">model</exception>
-		public async Task<Hulk> Insert(Hulk model)
+		public async Task<Category> Insert(Category model)
 		{
 			if (model == null)
 				throw new ArgumentNullException(nameof(model));
 
-			return await _hulkRepository.Insert(model);
+			return await _categoryRepository.Insert(model);
 		}
 
 		/// <summary>
@@ -67,12 +67,12 @@ namespace HulkOut.Logic
 		/// <param name="model">The model.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException">model</exception>
-		public async Task<Hulk> Update(Guid id, Hulk model)
+		public async Task<Category> Update(Guid id, Category model)
 		{
 			if (model == null)
 				throw new ArgumentNullException(nameof(model));
 
-			return await _hulkRepository.Update(id, model);
+			return await _categoryRepository.Update(id, model);
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace HulkOut.Logic
 		/// <returns></returns>
 		public async Task<bool> Delete(Guid id)
 		{
-			return await _hulkRepository.Delete(id);
+			return await _categoryRepository.Delete(id);
 		}
 	}
 }
