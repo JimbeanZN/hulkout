@@ -31,5 +31,26 @@ namespace HulkOut.Api.Controllers
 		{
 			return await _userService.Get(id);
 		}
+
+		// POST api/users
+		[HttpPost]
+		public async void Post([FromBody] User model)
+		{
+			await _userService.Insert(model);
+		}
+
+		// PUT api/users/63AAB81D-3EB5-4564-849A-28260B523FE4
+		[HttpPut("{id}")]
+		public async void Put(Guid id, [FromBody] User model)
+		{
+			await _userService.Update(model);
+		}
+
+		// DELETE api/users/63AAB81D-3EB5-4564-849A-28260B523FE4
+		[HttpDelete("{id}")]
+		public async void Delete(Guid id)
+		{
+			await _userService.Delete(id);
+		}
 	}
 }
