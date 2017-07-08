@@ -11,12 +11,12 @@ namespace HulkOut.Logic
 	/// <summary>
 	/// 
 	/// </summary>
-	/// <seealso cref="HulkOut.Shared.Interfaces.Categories.ICategoryService" />
-	public class CategoryService : ICategoryService
+	/// <seealso cref="ICategoryService" />
+	public class HulkService : ICategoryService
 	{
 		private readonly ICategoryRepository _categoryRepository;
 
-		public CategoryService(ICategoryRepository categoryRepository)
+		public HulkService(ICategoryRepository categoryRepository)
 		{
 			_categoryRepository = categoryRepository;
 		}

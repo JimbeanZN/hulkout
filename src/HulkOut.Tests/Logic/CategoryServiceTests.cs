@@ -16,9 +16,9 @@ namespace HulkOut.Tests.Logic
 	{
 		private readonly ICategoryRepository _categoryRepository = Substitute.For<ICategoryRepository>();
 
-		private CategoryService CategoryService()
+		private HulkService CategoryService()
 		{
-			var categoryService = new CategoryService(_categoryRepository);
+			var categoryService = new HulkService(_categoryRepository);
 			return categoryService;
 		}
 
