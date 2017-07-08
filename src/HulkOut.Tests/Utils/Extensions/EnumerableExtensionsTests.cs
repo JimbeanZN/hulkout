@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using HulkOut.Utils.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HulkOut.Utils.Tests.Extensions
+namespace HulkOut.Tests.Utils.Extensions
 {
 	[TestClass]
 	public class EnumerableExtensionsTests

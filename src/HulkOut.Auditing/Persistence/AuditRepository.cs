@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using HulkOut.Shared.Interfaces.Auditing;
 using HulkOut.Shared.Models.Data;
 
-namespace HulkOut.Data.EF
+namespace HulkOut.Auditing.Persistence
 {
 	/// <summary>
 	/// </summary>

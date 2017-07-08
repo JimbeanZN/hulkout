@@ -18,4 +18,8 @@
     <ProjectReference Include="..\HulkOut.Utils\HulkOut.Utils.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Data.Entity" />
+  </ItemGroup>
+
 </Project>

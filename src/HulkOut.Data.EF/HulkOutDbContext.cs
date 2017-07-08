@@ -5,8 +5,6 @@ namespace HulkOut.Data.EF
 {
 	public class HulkOutDbContext : DbContext
 	{
-		public DbSet<Audit> Audits { get; set; }
-
 		public DbSet<Hulk> Hulks { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Incident> Incidents { get; set; }
