@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using HulkOut.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace HulkOut.Tests.Extensions
 {
-	[TestClass]
+	[TestFixture]
 	public class EnumerableExtensionsTests
 	{
-		[TestMethod]
+		[Test]
 		public void IsNullOrEmpty_GivenEmptyEnumerable_ReturnsTrue()
 		{
 			//arrange
@@ -20,7 +20,7 @@ namespace HulkOut.Tests.Extensions
 			Assert.IsTrue(result);
 		}
 
-		[TestMethod]
+		[Test]
 		public void IsNullOrEmpty_GivenNullEnumerable_ReturnsTrue()
 		{
 			//arrange
@@ -33,7 +33,7 @@ namespace HulkOut.Tests.Extensions
 			Assert.IsTrue(result);
 		}
 
-		[TestMethod]
+		[Test]
 		public void IsNullOrEmpty_GivenEnumerableItems_ReturnsFalse()
 		{
 			//arrange
