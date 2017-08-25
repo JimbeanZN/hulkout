@@ -12,6 +12,7 @@ branches:
 
 before_build:
 - dotnet restore ./src/HulkOut.sln
+- choco install nunit-console-runner
 - choco install opencover.portable
 - choco install codecov
 
