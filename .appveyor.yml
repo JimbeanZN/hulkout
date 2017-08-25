@@ -3,8 +3,16 @@ configuration: Debug
 
 image: Visual Studio 2017
 
+pull_requests:
+  do_not_increment_build_number: true
+
+branches:
+  only:
+  - master
+
 before_build:
-- nuget restore ./src/HulkOut.sln
+- nuget restore
+- dotnet restore
 - choco install opencover.portable
 - choco install codecov
 
