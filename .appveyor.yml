@@ -11,7 +11,6 @@ branches:
   - master
 
 before_build:
-- nuget restore ./src/HulkOut.sln
 - dotnet restore ./src/HulkOut.sln
 - choco install opencover.portable
 - choco install codecov
