@@ -12,7 +12,6 @@ branches:
 
 before_build:
 - dotnet restore ./src/HulkOut.sln
-- choco install nunit-console-runner
 - choco install opencover.portable
 - choco install codecov
 
@@ -20,11 +19,12 @@ build:
   project: ./src/HulkOut.sln
 
 test_script:
-  - dotnet test "src/HulkOut.Tests/" -c %CONFIGURATION%
+  - dotnet test "src/HulkOut.Tests/" --logger "trx;LogFileName=HulkOut_Results.trx"
 
 after_test:
-- OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe"  -filter:"+[HulkOut.*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
+- OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test src/HulkOut.Tests/" -output:"HulkOut_Coverage.xml"
 - codecov -f "HulkOut_Coverage.xml"
 
 artifacts:
+- path: src\HulkOut.Tests\TestResults\HulkOut_Results.trx
 - path: HulkOut_Coverage.xml
