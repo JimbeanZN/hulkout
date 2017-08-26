@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using HulkOut.Interfaces;
 
 namespace HulkOut.Extensions
 {
