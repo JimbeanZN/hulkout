@@ -9,7 +9,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/JimbeanZN/hulkout</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/JimbeanZN/hulkout/blob/master/LICENSE</PackageLicenseUrl>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
