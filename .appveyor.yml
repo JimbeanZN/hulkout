@@ -21,7 +21,7 @@ build_script:
 
 test_script:
 # - dotnet test "src/HulkOut.Tests/" --logger "trx;LogFileName=HulkOut_Results.trx"
-- OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test ./src/HulkOut.Tests/"  -filter:"+[HulkOut.*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
+- OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test ./src/HulkOut.Tests/HulkOut.Tests.csproj"  -filter:"+[HulkOut*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
 
 after_test:
 - codecov -f "HulkOut_Coverage.xml"
