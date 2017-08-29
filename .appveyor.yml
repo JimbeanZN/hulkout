@@ -5,10 +5,20 @@ image: Visual Studio 2017
 
 pull_requests:
   do_not_increment_build_number: true
+  
+nuget:
+  disable_publish_on_pr: true
 
 branches:
   only:
   - master
+  
+# assembly_info:
+  # patch: true
+  # file: AssemblyInfo.cs
+  # assembly_version: '{version}'
+  # assembly_file_version: '{version}'
+  # assembly_informational_version: '{version}'
 
 before_build:
   - dotnet --version
@@ -20,10 +30,12 @@ build_script:
   - dotnet publish ./src/HulkOut/HulkOut.csproj
 
 test_script:
-- OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test ./src/HulkOut.Tests/HulkOut.Tests.csproj"  -filter:"+[HulkOut*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
+    - OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test ./src/HulkOut.Tests/HulkOut.Tests.csproj"  -filter:"+[HulkOut*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
 
 after_test:
-- codecov -f "HulkOut_Coverage.xml"
+    - codecov -f "HulkOut_Coverage.xml"
 
 artifacts:
-- path: HulkOut_Coverage.xml
+    - path: HulkOut_Coverage.xml
+    - path: ./src/**/*.nupkg
+      name: NuGet
