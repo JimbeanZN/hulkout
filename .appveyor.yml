@@ -13,12 +13,11 @@ branches:
   only:
   - master
   
-# assembly_info:
-  # patch: true
-  # file: AssemblyInfo.cs
-  # assembly_version: '{version}'
-  # assembly_file_version: '{version}'
-  # assembly_informational_version: '{version}'
+dotnet_csproj:
+  patch: true
+  file: '.src/HulkOut/HulkOut/HulkOut.csproj'
+  version: '{version}'
+  package_version: '{version}'
 
 before_build:
   - dotnet --version
