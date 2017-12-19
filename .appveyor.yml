@@ -13,11 +13,11 @@ branches:
   only:
   - master
   
-dotnet_csproj:
-  patch: true
-  file: '.src/HulkOut/HulkOut/HulkOut.csproj'
-  version: '{version}'
-  package_version: '{version}'
+#dotnet_csproj:
+  #patch: true
+  #file: '.src/HulkOut/HulkOut/HulkOut.csproj'
+  #version: '{version}'
+  #package_version: '{version}'
 
 before_build:
   - dotnet --version
