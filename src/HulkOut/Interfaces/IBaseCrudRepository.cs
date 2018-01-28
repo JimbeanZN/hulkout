@@ -1,22 +1,21 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Threading;
-using Microsoft.AspNetCore.Mvc;
 
 namespace HulkOut.Interfaces
 {
 	/// <summary>
-	/// An interface that can be used to baseline API CRUD services.
+	/// An interface that can be used to baseline CRUD repositories.
 	/// </summary>
+	/// <typeparam name="T">The type of the model.</typeparam>
 	/// <typeparam name="TId">The type of the Id identifier.</typeparam>
-	/// <typeparam name="TModel">The type of the model.</typeparam>
-	public interface IBaseApiCrudService<in TId, in TModel>
+	public interface IBaseCrudRepository<T, in TId>
 	{
 		/// <summary>
 		/// Get all instances.
 		/// </summary>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Get(CancellationToken cancellationToken = default(CancellationToken));
+		IEnumerable<T> Get(CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
 		/// Gets the specified instance.
@@ -24,7 +23,7 @@ namespace HulkOut.Interfaces
 		/// <param name="id">The identifier.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Get(TId id, CancellationToken cancellationToken = default(CancellationToken));
+		T Get(TId id, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
 		/// Posts the specified model.
@@ -32,7 +31,7 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Post(TModel model, CancellationToken cancellationToken = default(CancellationToken));
+		T Post(T model, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
 		/// Updates the specified model.
@@ -41,7 +40,7 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Put(TId id, TModel model, CancellationToken cancellationToken = default(CancellationToken));
+		void Put(TId id, T model, CancellationToken cancellationToken = default(CancellationToken));
 
 		/// <summary>
 		/// Deletes the specified model.
@@ -49,6 +48,6 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Delete(TId model, CancellationToken cancellationToken = default(CancellationToken));
+		void Delete(TId model, CancellationToken cancellationToken = default(CancellationToken));
 	}
 }
