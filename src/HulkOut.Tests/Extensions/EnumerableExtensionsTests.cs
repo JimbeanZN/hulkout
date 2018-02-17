@@ -11,6 +11,7 @@ namespace HulkOut.Tests.Extensions
 		public void IsNullOrEmpty_GivenEmptyEnumerable_ReturnsTrue()
 		{
 			//arrange
+			// ReSharper disable once CollectionNeverUpdated.Local
 			var list = new List<string>();
 
 			//act
@@ -27,6 +28,7 @@ namespace HulkOut.Tests.Extensions
 			IEnumerable<string> list = null;
 
 			//act
+			// ReSharper disable once ExpressionIsAlwaysNull
 			var result = list.IsNullOrEmpty();
 
 			//assert
