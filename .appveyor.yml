@@ -23,14 +23,16 @@ dotnet_csproj:
   informational_version: '{version}'
 
 before_build:
-  - dotnet --version
-  - choco install opencover.portable
-  - choco install codecov
+    - dotnet --version
+    - choco install opencover.portable
+    - choco install codecov
 
 build_script:
-  - dotnet build ./src/HulkOut.sln --verbosity m
-  - dotnet pack ./src/HulkOut/HulkOut.csproj --verbosity m
+    - dotnet build ./src/HulkOut.sln --verbosity m
 
+after_build:
+    - dotnet pack ./src/HulkOut/HulkOut.csproj --verbosity m
+  
 test_script:
     - OpenCover.Console.exe -register:user -oldstyle -hideskipped:filter -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test ./src/HulkOut.Tests/HulkOut.Tests.csproj"  -filter:"+[HulkOut*]* -[*.Tests]*" -output:"HulkOut_Coverage.xml"
 
