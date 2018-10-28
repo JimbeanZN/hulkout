@@ -13,17 +13,6 @@ namespace HulkOut.AspNetCore.Swashbuckle.Filters
     {
       operation.Responses.Add(((int) HttpStatusCode.InternalServerError).ToString(),
         new Response {Description = "Internal Server Error"});
-
-      var httpGetAttributes = context.MethodInfo.DeclaringType.GetCustomAttributes(true)
-        .Union(context.MethodInfo.GetCustomAttributes(true))
-        .OfType<HttpGetAttribute>();
-
-      if (!httpGetAttributes.Any())
-      {
-        return;
-      }
-
-      operation.Responses.Add(((int) HttpStatusCode.NotFound).ToString(), new Response {Description = "Not Found"});
     }
   }
 }
