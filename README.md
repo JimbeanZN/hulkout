@@ -5,5 +5,11 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b8f11ede67f45158ded7fd858189c80)](https://www.codacy.com/app/JimbeanZN/hulkout?utm_source=github.com&utm_medium=referral&utm_content=JimbeanZN/hulkout&utm_campaign=badger)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/JimbeanZN/hulkout/blob/master/LICENSE)
 
+## HulkOut
 [![NuGet](https://img.shields.io/nuget/v/HulkOut.svg)](https://www.nuget.org/packages/HulkOut)
 [![NuGet](https://img.shields.io/nuget/dt/HulkOut.svg)](https://www.nuget.org/packages/HulkOut)
+
+## HulkOut.AspNetCore.Swashbuckle
+
+[![NuGet](https://img.shields.io/nuget/v/HulkOut.AspNetCore.Swashbuckle.svg)](https://www.nuget.org/packages/HulkOut.AspNetCore.Swashbuckle)
+[![NuGet](https://img.shields.io/nuget/dt/HulkOut.AspNetCore.Swashbuckle.svg)](https://www.nuget.org/packages/HulkOut.AspNetCore.Swashbuckle)
