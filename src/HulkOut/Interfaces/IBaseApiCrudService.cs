@@ -15,7 +15,7 @@ namespace HulkOut.Interfaces
 		/// </summary>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Get(CancellationToken cancellationToken = default(CancellationToken));
+		IActionResult Get(CancellationToken cancellationToken);
 
 		/// <summary>
 		/// Gets the specified instance.
@@ -23,7 +23,7 @@ namespace HulkOut.Interfaces
 		/// <param name="id">The identifier.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Get(TId id, CancellationToken cancellationToken = default(CancellationToken));
+		IActionResult Get(TId id, CancellationToken cancellationToken);
 
 		/// <summary>
 		/// Posts the specified model.
@@ -31,7 +31,7 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Post(TModel model, CancellationToken cancellationToken = default(CancellationToken));
+		IActionResult Post(TModel model, CancellationToken cancellationToken);
 
 		/// <summary>
 		/// Updates the specified model.
@@ -40,7 +40,7 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Put(TId id, TModel model, CancellationToken cancellationToken = default(CancellationToken));
+		IActionResult Put(TId id, TModel model, CancellationToken cancellationToken);
 
 		/// <summary>
 		/// Deletes the specified model.
@@ -48,6 +48,6 @@ namespace HulkOut.Interfaces
 		/// <param name="model">The model.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		IActionResult Delete(TId model, CancellationToken cancellationToken = default(CancellationToken));
+		IActionResult Delete(TId model, CancellationToken cancellationToken);
 	}
 }
