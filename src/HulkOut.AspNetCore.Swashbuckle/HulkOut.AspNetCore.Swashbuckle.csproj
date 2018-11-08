@@ -5,18 +5,18 @@
     <Description>A collection of useful methods to improve your coding exprience with Swashbuckle.AspNetCore</Description>
     <Authors>Doron Epstein</Authors>
     <Company />
-    <RepositoryUrl>https://github.com/JimbeanZN/hulkout</RepositoryUrl>
+    <RepositoryUrl>https://github.com/doron-nathan-epstein/hulkout</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/JimbeanZN/hulkout</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/JimbeanZN/hulkout/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/doron-nathan-epstein/hulkout</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/doron-nathan-epstein/hulkout/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

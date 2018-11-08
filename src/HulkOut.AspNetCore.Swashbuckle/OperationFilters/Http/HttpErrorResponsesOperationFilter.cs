@@ -1,13 +1,11 @@
-﻿using System.Linq;
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace HulkOut.AspNetCore.Swashbuckle.Filters
+namespace HulkOut.AspNetCore.Swashbuckle.OperationFilters.Http
 {
   /// <inheritdoc />
-  public class InternalServerErrorResponseOperationFilter : IOperationFilter
+  public class HttpErrorResponsesOperationFilter : IOperationFilter
   {
     public void Apply(Operation operation, OperationFilterContext context)
     {
