@@ -9,6 +9,12 @@
 [![NuGet](https://img.shields.io/nuget/v/HulkOut.svg)](https://www.nuget.org/packages/HulkOut)
 [![NuGet](https://img.shields.io/nuget/dt/HulkOut.svg)](https://www.nuget.org/packages/HulkOut)
 
+## HulkOut.AspNetCore
+
+[![NuGet](https://img.shields.io/nuget/v/HulkOut.AspNetCore.svg)](https://www.nuget.org/packages/HulkOut.AspNetCore)
+[![NuGet](https://img.shields.io/nuget/dt/HulkOut.AspNetCore.svg)](https://www.nuget.org/packages/HulkOut.AspNetCore)
+
+
 ## HulkOut.AspNetCore.Swashbuckle
 
 [![NuGet](https://img.shields.io/nuget/v/HulkOut.AspNetCore.Swashbuckle.svg)](https://www.nuget.org/packages/HulkOut.AspNetCore.Swashbuckle)
