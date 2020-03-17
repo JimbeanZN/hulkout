@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Description>A collection of useful methods to improve your coding exprience</Description>
     <Authors>Doron Epstein</Authors>
     <Company />
@@ -19,10 +19,7 @@
     <AssemblyVersion>1.6.0.0</AssemblyVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.Annotations">
-      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.0.0\ref\netcoreapp2.0\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+	</ItemGroup>
 </Project>

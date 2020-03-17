@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Description>A collection of useful methods to improve your coding exprience with Swashbuckle.AspNetCore</Description>
     <Authors>Doron Epstein</Authors>
     <Company />
@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>
