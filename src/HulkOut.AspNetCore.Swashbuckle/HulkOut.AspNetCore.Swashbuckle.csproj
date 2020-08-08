@@ -8,16 +8,10 @@
     <RepositoryUrl>https://github.com/doron-nathan-epstein/hulkout</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/doron-nathan-epstein/hulkout</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/doron-nathan-epstein/hulkout/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-    <Version>1.8.0</Version>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
-    <FileVersion>1.3.0.0</FileVersion>
+	<Version>1.0.0.0</Version>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
